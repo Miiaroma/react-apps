@@ -5,8 +5,8 @@ import Button from '../UI/Button';
 import classes from './AddUser.module.css';
 
 const AddUser = (props) => {
-  const [enteredUsername, setEnterredUsername] = useState("");
-  const [enteredAge, setEnterredAge] = useState("");
+  const [enteredUsername, setEnteredUsername] = useState("");
+  const [enteredAge, setEnteredAge] = useState("");
 
 
   const addUserHandler = (event) => {
@@ -20,17 +20,17 @@ const AddUser = (props) => {
       return;
     }
 
-    console.log(enteredUsername, enteredAge);
-    setEnterredUsername('');
-    setEnterredAge('');
+    props.onAddUser(enteredUsername, enteredAge);   
+    setEnteredUsername('');
+    setEnteredAge('');
   };
 
   const usernameChangeHandler = (event) => {
-setEnterredUsername(event.target.value);
+setEnteredUsername(event.target.value);
   };
 
   const ageChangeHandler = (event) => {
-    setEnterredAge(event.target.value);
+    setEnteredAge(event.target.value);
       };
 
   return (
